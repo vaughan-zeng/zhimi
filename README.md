@@ -1,2 +1,2 @@
 # zhimi
-home assistant custom components for shim air condition
+home assistant custom components for zhim air condition
