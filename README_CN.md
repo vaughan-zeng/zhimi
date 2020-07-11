@@ -1,4 +1,4 @@
-# 智米空调MA1 组件
+# 智米空调MA1组件 ([English](README.md))
 
 This is a custom component for home assistant to integrate the Zhimi(Xiaomi\ Mijia) Air Conditioning ( zhimi.aircondition.ma1 ):
 ![Image text](zhimi.aircondition.ma1.jpg)
@@ -13,12 +13,11 @@ Please follow the instructions on [Retrieving the Access Token](https://www.home
 ## 功能
 
 * 电源 (on, off)
-* 设定温度 (min = 16, max = 32)
+* 设定温度 (调节精度：0.1°C, 最低：16°C, 最高：30°C)
 * 空调模式 (加热, 制冷, 通风, 除湿)
 * 预设模式 (睡眠, 舒适, 正常)
 * 风速调整 (Low, Low_medium, Medium, Medium_high, High, Auto)
 * 扫风模式 (Off, End_at_20, End_at_40, End_at_60)
-
 * 属性
   - ac_model
   - operation_mode
@@ -32,7 +31,16 @@ Please follow the instructions on [Retrieving the Access Token](https://www.home
   - volume
   - idle_timer
   - open_timer
-  
+* 实体服务
+  - 打开智米空调声音
+  - 关闭智米空调声音
+  - 设置智米空调显示屏亮度
+  - 设置智米空调上下扫风角度
+  - 设置智米空调定时关机计时器
+  - 设备智米空调定时开机计时器
+
+![Image text](setting_card.jpg)
+![Image text](state_card.jpg)
   
 ## Install
 

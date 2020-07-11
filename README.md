@@ -1,4 +1,4 @@
-# Zhimi Air Conditioning MA1 Component ([中文版本](README_CN.md))
+# Zhimi Air Conditioning MA1 Component ([中文](README_CN.md))
 
 This is a custom component for home assistant to integrate the Zhimi(Xiaomi\ Mijia) Air Conditioning ( zhimi.aircondition.ma1 ):
 ![Image text](zhimi.aircondition.ma1.jpg)
@@ -13,7 +13,7 @@ Please follow the instructions on [Retrieving the Access Token](https://www.home
 ## Features
 
 * Power (on, off)
-* Target Temperature (min = 16, max = 32)
+* Target Temperature (STEP = 0.1°C, min = 16°C, max = 30°C)
 * Operation Mode (Heat, Cooling, Wind, Arefaction)
 * Preset Mode (Sleep, Comfort, None)
 * Fan Speed (Low, Low_medium, Medium, Medium_high, High, Auto)
@@ -38,7 +38,10 @@ Please follow the instructions on [Retrieving the Access Token](https://www.home
   - Set Zhimi air conditioning swing vertical angle
   - Set Zhimi air conditioning idle timer
   - Set Zhimi air conditioning open timer
-  
+
+![Image text](setting_card.jpg)
+![Image text](state_card.jpg)
+
 ## Install
 
 You can install it manually by copying the custom_component folder to your Home Assistant configuration folder.
