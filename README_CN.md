@@ -1,4 +1,4 @@
-# Zhimi Air Conditioning MA1 Component ([中文版本])
+# 智米空调MA1 组件
 
 This is a custom component for home assistant to integrate the Zhimi(Xiaomi\ Mijia) Air Conditioning ( zhimi.aircondition.ma1 ):
 ![Image text](zhimi.aircondition.ma1.jpg)
@@ -10,15 +10,16 @@ only test:
 
 Please follow the instructions on [Retrieving the Access Token](https://www.home-assistant.io/components/vacuum.xiaomi_miio/#retrieving-the-access-token) to get the API token to use in the configuration.yaml file.
 
-## Features
+## 功能
 
-* Power (on, off)
-* Target Temperature (min = 16, max = 32)
-* Operation Mode (Heat, Cooling, Wind, Arefaction)
-* Preset Mode (Sleep, Comfort, None)
-* Fan Speed (Low, Low_medium, Medium, Medium_high, High, Auto)
-* Swing Mode (Off, End_at_20, End_at_40, End_at_60)
-* Attributes
+* 电源 (on, off)
+* 设定温度 (min = 16, max = 32)
+* 空调模式 (加热, 制冷, 通风, 除湿)
+* 预设模式 (睡眠, 舒适, 正常)
+* 风速调整 (Low, Low_medium, Medium, Medium_high, High, Auto)
+* 扫风模式 (Off, End_at_20, End_at_40, End_at_60)
+
+* 属性
   - ac_model
   - operation_mode
   - fan_speed
@@ -31,13 +32,7 @@ Please follow the instructions on [Retrieving the Access Token](https://www.home
   - volume
   - idle_timer
   - open_timer
-* Entity Services
-  - Turn on Zhimi air conditioning volume
-  - Turn off Zhimi air conditioning volume
-  - Set Zhimi air conditioning lcd brightness level
-  - Set Zhimi air conditioning swing vertical angle
-  - Set Zhimi air conditioning idle timer
-  - Set Zhimi air conditioning open timer
+  
   
 ## Install
 
@@ -72,11 +67,11 @@ logger:
     miio: debug
 ```
 
-## Entity Services
+## 实体服务
 
 #### Service `zhimi.turn_on_ac_volume`
 
-Turn on Zhimi air conditioning volume.
+打开智米空调声音.
 
 | Service data attribute    | Optional | Description                                                          |
 |---------------------------|----------|----------------------------------------------------------------------|
@@ -84,7 +79,7 @@ Turn on Zhimi air conditioning volume.
 
 #### Service `zhimi.turn_off_ac_volume`
 
-Turn off Zhimi air conditioning volume.
+关闭智米空调声音.
 
 | Service data attribute    | Optional | Description                                                          |
 |---------------------------|----------|----------------------------------------------------------------------|
@@ -92,7 +87,7 @@ Turn off Zhimi air conditioning volume.
 
 #### Service `zhimi.set_ac_lcd_level`
 
-Set Zhimi air conditioning lcd brightness level.
+设置智米空调显示屏亮度.
 
 | Service data attribute    | Optional | Description                                                          |
 |---------------------------|----------|----------------------------------------------------------------------|
@@ -101,7 +96,7 @@ Set Zhimi air conditioning lcd brightness level.
 
 #### Service `zhimi.set_ac_swing_angle`
 
-Set Zhimi air conditioning swing vertical angle.
+设置智米空调上下扫风角度.
 
 | Service data attribute    | Optional | Description                                                          |
 |---------------------------|----------|----------------------------------------------------------------------|
@@ -110,7 +105,7 @@ Set Zhimi air conditioning swing vertical angle.
 
 #### Service `zhimi.set_ac_idle_timer`
 
-Set Zhimi air conditioning idle timer.
+设置智米空调定时关机计时器.
 
 | Service data attribute    | Optional | Description                                                          |
 |---------------------------|----------|----------------------------------------------------------------------|
@@ -119,7 +114,7 @@ Set Zhimi air conditioning idle timer.
 
 #### Service `zhimi.set_ac_open_timer`
 
-Set Zhimi air conditioning open timer.
+设备智米空调定时开机计时器.
 
 | Service data attribute    | Optional | Description                                                          |
 |---------------------------|----------|----------------------------------------------------------------------|
