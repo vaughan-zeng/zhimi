@@ -4,9 +4,9 @@ This is a custom component for home assistant to integrate the Zhimi(Xiaomi\ Mij
 ![Image text](zhimi.aircondition.ma1.jpg)
 
 
-| Model ID          | Model number | Product name                            | Shape    |
+| Model ID          | fw_ver | mcu_fw_ver                            | hw_ver    |
 |-------------------|--------------|-----------------------------------------|----------|
-| `zhimi.aircondition.ma1`    | KTBL01LM     | Aqara Air Conditioning Companion        | square   |
+| `zhimi.aircondition.ma1`    | 2.0.9     | 0010        | esp32   |
 | `acaprtner.v2`    | KTBL02LM     | Xiaomi Mi Air Conditioner Companion     | round    |
 | `acpartner.v3`    | KTBL11LM     | Aqara Air Conditioning Companion        | square   |
 
