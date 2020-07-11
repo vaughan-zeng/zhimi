@@ -2,53 +2,53 @@ turn_on_ac_volume:
   description: Turn on Zhimi air conditioning volume.
   fields:
     entity_id:
-      description: Name(s) of AC to turn on volume.
+      description: Name(s) of Zhimi AC to turn on volume.
       example: "climate.zhimi_air_conditioning_ma1"
 
 turn_off_ac_volume:
   description: Turn off Zhimi air conditioning.
   fields:
     entity_id:
-      description: Name(s) of AC to turn off volume.
+      description: Name(s) of Zhimi AC to turn off volume.
       example: "climate.zhimi_air_conditioning_ma1"
 
 set_ac_lcd_level:
   description: Set Zhimi air conditioning lcd brightness level.
   fields:
     entity_id:
-      description: Name(s) of AC to set lcd level.
+      description: Name(s) of Zhimi AC to set lcd level.
       example: "climate.zhimi_air_conditioning_ma1"
     brightness:
-      description: 0 - 6, AC LCD brightness level (0 = off, 6 = auto).
+      description: 0 - 6, Zhimi AC LCD brightness level (0 = off, 6 = auto).
       example: 3
 
 set_ac_swing_angle:
   description: Set Zhimi air conditioning swing vertical angle.
   fields:
     entity_id:
-      description: Name(s) of AC to set swing vertical angle.
+      description: Name(s) of Zhimi AC to set swing vertical angle.
       example: "climate.zhimi_air_conditioning_ma1"
     angle:
-      description: 0 - 60, AC swing vertical angle.
+      description: 0 - 60, Zhimi AC swing vertical angle.
       example: 20
 
 set_ac_idle_timer:
   description: Set Zhimi air conditioning idle timer.
   fields:
     entity_id:
-      description: Name(s) of AC to set idle timer.
+      description: Name(s) of Zhimi AC to set idle timer.
       example: "climate.zhimi_air_conditioning_ma1"
     timer:
-      description: 0 - 480, AC idle timer (minutes).
+      description: 0 - 480, Zhimi AC idle timer (minutes, 0 = off) .
       example: 90
 
 set_ac_open_timer:
   description: Set Zhimi air conditioning open timer.
   fields:
     entity_id:
-      description: Name(s) of AC to set open timer.
+      description: Name(s) of Zhimi AC to set open timer.
       example: "climate.zhimi_air_conditioning_ma1"
     timer:
-      description: 0 - 480, AC open timer (minutes).
+      description: 0 - 480, Zhimi AC open timer (minutes, 0 = off) .
       example: 90
 

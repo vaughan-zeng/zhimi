@@ -15,16 +15,12 @@ from miio.click_common import command, format_output, EnumType
 
 from .airconditioning import AirCondition, LcdBrightness, FanSpeed, SwingMode
 
-# from homeassistant.core import callback
 from homeassistant.components.climate import ClimateEntity, PLATFORM_SCHEMA
 from homeassistant.components.climate.const import (
     ATTR_HVAC_MODE,
-    # ATTR_SWING_MODE,
-    # ATTR_FAN_MODE,
     DOMAIN,
     HVAC_MODES,
     HVAC_MODE_OFF,
-    # HVAC_MODE_AUTO,
     HVAC_MODE_HEAT,
     HVAC_MODE_COOL,
     HVAC_MODE_DRY,
@@ -40,25 +36,20 @@ from homeassistant.components.climate.const import (
 from homeassistant.const import (
     ATTR_ENTITY_ID,
     ATTR_TEMPERATURE,
-    # ATTR_UNIT_OF_MEASUREMENT,
     CONF_NAME,
     CONF_HOST,
     CONF_TOKEN,
     CONF_BRIGHTNESS,
-    # CONF_TIMEOUT,
     TEMP_CELSIUS,
 )
 
 from homeassistant.exceptions import PlatformNotReady
-# from homeassistant.helpers.event import async_track_state_change
 import homeassistant.helpers.config_validation as cv
 from homeassistant.helpers import config_validation as cv, entity_platform, service
-# from homeassistant.util.dt import utcnow
 
 _LOGGER = logging.getLogger(__name__)
 
 SUCCESS = ['ok']
-
 
 DEFAULT_NAME = 'Zhimi Air Condition'
 DATA_KEY = 'climate.zhimi'
@@ -71,15 +62,10 @@ CONF_TIMER = 'timer'
 
 ATTR_AIR_CONDITION_MODEL = "ac_model"
 ATTR_SWING_ANGLE = "swing_angle"
-# ATTR_LCD_AUTO = "lcd_auto"
-# ATTR_LCD_LEVEL = "lcd_level"
 ATTR_LCD_SETTING = "lcd_setting"
 ATTR_VOLUME = "volume"
-# ATTR_SLEEP = "sleep"
-# ATTR_COMFORT = "comfort"
 ATTR_IDLE_TIMER = "idle_timer"
 ATTR_OPEN_TIMER = "open_timer"
-# CONF_COMMAND = "command"
 
 SCAN_INTERVAL = timedelta(seconds=60)
 
@@ -139,7 +125,6 @@ class OperationMode(enum.Enum):
     arefaction = HVAC_MODE_DRY
 
 
-# pylint: disable=unused-argument
 @asyncio.coroutine
 def async_setup_platform(hass, config, async_add_devices, discovery_info=None):
     """Set up the air condition companion from config."""
@@ -258,8 +243,6 @@ class ZhimiAirCondition(ClimateEntity):
             ATTR_TEMPERATURE: None,
             ATTR_HVAC_MODE: None,
             ATTR_SWING_ANGLE: None,
-            # ATTR_LCD_AUTO: None,
-            # ATTR_LCD_LEVEL: None,
             ATTR_LCD_SETTING: None,
             ATTR_VOLUME: None,
             ATTR_IDLE_TIMER: None,
@@ -314,17 +297,12 @@ class ZhimiAirCondition(ClimateEntity):
         try:
             state = yield from self.hass.async_add_job(self._device.status)
             _LOGGER.debug("Got new state: %s", state)
-            # Got new state: <AirConditionStatus power=on, mode=cooling, target_temp=26.9, 
-            # temperature=26.7, swing=off, fan_speed=1, lcd_auto=off, lcd_level=2, volume=on, 
-            # sleep=off, comfort=off>
             self._available = True
             self._state_attrs.update(
                 {
                     ATTR_TEMPERATURE: state.target_temp,
                     ATTR_HVAC_MODE: state.mode if self._state else "off",
                     ATTR_SWING_ANGLE: state.swing_angle,
-                    # ATTR_LCD_AUTO: state.lcd_auto,
-                    # ATTR_LCD_LEVEL: state.lcd_level,
                     ATTR_LCD_SETTING: LcdBrightness(state.lcd_setting).name,
                     ATTR_VOLUME: state.volume,
                     ATTR_IDLE_TIMER: state.idle_timer,
@@ -332,7 +310,6 @@ class ZhimiAirCondition(ClimateEntity):
                 }
             )
 
-            # 确认什么情况下power为off和on?
             if state.power == "off":
                 self._hvac_mode = HVAC_MODE_OFF
                 self._state = False
@@ -356,7 +333,6 @@ class ZhimiAirCondition(ClimateEntity):
                 self._preset_mode = PRESET_SLEEP
             else:
                 self._preset_mode = PRESET_NONE
-            # _LOGGER.info("AAA self._preset_mode: %s", self._preset_mode)
 
         except DeviceException as ex:
             self._available = False
@@ -560,7 +536,6 @@ class ZhimiAirCondition(ClimateEntity):
     @asyncio.coroutine
     def async_set_fan_mode(self, fan_mode):
         """Set the fan speed."""
-        # _LOGGER.info("CCC fan_speed: (%s)", fan_mode)
         if self.supported_features & SUPPORT_FAN_MODE == 0:
             return
         if self._hvac_mode == HVAC_MODE_DRY:
@@ -614,7 +589,4 @@ class ZhimiAirCondition(ClimateEntity):
         yield from  self._try_command(
             "Setting open timer of the miio AC failed.",
             self._device.set_open_timer, timer)
-
-
-
 

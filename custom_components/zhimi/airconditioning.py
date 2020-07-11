@@ -6,7 +6,6 @@ import click
 
 from miio.click_common import command, format_output, EnumType
 from miio import Device, DeviceException
-# from .exceptions import DeviceException
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -15,7 +14,6 @@ MODELS_SUPPORTED = [ZHIMI_AC_MA1]
 
 class AirConditionException(DeviceException):
     pass
-
 
 
 class FanSpeed(enum.Enum):
@@ -28,7 +26,6 @@ class FanSpeed(enum.Enum):
 
 
 class SwingMode(enum.Enum):
-    # On = 1
     off = 0
     end_at_20 = 20
     end_at_40 = 40
@@ -84,7 +81,7 @@ class AirConditionStatus:
         """
 
         self.data = data
-        # _LOGGER.info("BBB self.data: (%s)", self.data)
+        _LOGGER.debug("BBB self.data: (%s)", self.data)
 
     @property
     def power(self) -> bool:
@@ -126,16 +123,6 @@ class AirConditionStatus:
     def fan_speed(self) -> int:
         """Fan speed."""
         return self.data['speed_level']
-
-    # @property
-    # def lcd_auto(self) -> bool:
-    #     """LCD auto."""
-    #     return self.data['lcd_auto']
-
-    # @property
-    # def lcd_level(self) -> int:
-    #     """LCD level."""
-    #     return self.data['lcd_level']
 
     @property
     def lcd_setting(self) -> int:
@@ -193,8 +180,6 @@ class AirConditionStatus:
              self.swing_setting,
              self.swing_angle,
              self.fan_speed,
-            #  self.lcd_auto,
-            #  self.lcd_level,
              self.lcd_setting,
              self.volume,
              self.sleep,
@@ -216,7 +201,6 @@ class AirCondition(Device):
         if model in MODELS_SUPPORTED:
             self.model = model
         else:
-            # self.model = ZHIMI_AC_MA1
             _LOGGER.error("Device model %s unsupported. Falling back to %s.", model, ZHIMI_AC_MA1)
 
     @command(
@@ -254,7 +238,7 @@ class AirCondition(Device):
         values = []
         while _props:
             values.extend(self.send("get_prop", _props[:1]))
-            # _LOGGER.debug("AAA propertie: (%s), value: (%s)", _props[:1], values)
+            _LOGGER.debug("AAA propertie: (%s), value: (%s)", _props[:1], values)
             _props[:] = _props[1:]
 
         properties_count = len(properties)

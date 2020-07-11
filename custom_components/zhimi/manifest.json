@@ -1,7 +1,7 @@
 {
   "domain": "zhimi",
   "name": "Zhimi Air Condition",
-  "documentation": "https://github.com/vaughan/homeassistant-zhimi",
+  "documentation": "https://github.com/vaughan-zeng/zhimi",
   "requirements": [
     "construct==2.9.45",
     "python-miio==0.4.5"
