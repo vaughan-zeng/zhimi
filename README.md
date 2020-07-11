@@ -10,8 +10,6 @@ only test:
 
 Please follow the instructions on [Retrieving the Access Token](https://www.home-assistant.io/components/vacuum.xiaomi_miio/#retrieving-the-access-token) to get the API token to use in the configuration.yaml file.
 
-Credits: Thanks to [Rytilahti](https://github.com/rytilahti/python-miio) for all the work.
-
 ## Features
 
 * Power (on, off)
@@ -123,5 +121,8 @@ Set Zhimi air conditioning open timer.
 | `entity_id`               |       no | Name(s) of Zhimi AC to set open timer.               |
 | `timer`               |       no | 0 - 480, Zhimi AC open timer (minutes, 0 = off)               |
 
+## Credits
 
+* [Rytilahti](https://github.com/rytilahti/python-miio)
+* [syssi](https://github.com/syssi/xiaomi_airconditioningcompanion)
 
