@@ -53,7 +53,7 @@ climate:
     token: 7abccb4844876e12ec402d832f69784c
 ```
 
-![Image text](climate.png)
+![Image text](climate.jpg)
 
 ## Debugging
 
