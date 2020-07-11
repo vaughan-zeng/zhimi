@@ -53,7 +53,7 @@ climate:
     token: 7abccb4844876e12ec402d832f69784c
 ```
 
-![Image text](zhimi.aircondition.ma1.jpg)
+![Image text](climate.png)
 
 ## Debugging
 
