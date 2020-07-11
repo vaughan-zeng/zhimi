@@ -1,4 +1,4 @@
-# Zhimi Air Conditioning MA1 Component ([中文版本])
+# Zhimi Air Conditioning MA1 Component ([中文版本](README_CN.md))
 
 This is a custom component for home assistant to integrate the Zhimi(Xiaomi\ Mijia) Air Conditioning ( zhimi.aircondition.ma1 ):
 ![Image text](zhimi.aircondition.ma1.jpg)
