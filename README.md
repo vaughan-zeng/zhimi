@@ -6,7 +6,7 @@ This is a custom component for home assistant to integrate the Zhimi(Xiaomi\ Mij
 
 | Model ID          | Model number | Product name                            | Shape    |
 |-------------------|--------------|-----------------------------------------|----------|
-| `acpartner.v1`    | KTBL01LM     | Aqara Air Conditioning Companion        | square   |
+| `zhimi.aircondition.ma1`    | KTBL01LM     | Aqara Air Conditioning Companion        | square   |
 | `acaprtner.v2`    | KTBL02LM     | Xiaomi Mi Air Conditioner Companion     | round    |
 | `acpartner.v3`    | KTBL11LM     | Aqara Air Conditioning Companion        | square   |
 
